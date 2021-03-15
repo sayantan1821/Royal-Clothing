@@ -16,6 +16,9 @@ const Header = () => (
             <Link className='option' to='/contact'>
                 CONTACT
             </Link>
+            <Link className='option' to='/sign-in'>
+                LOG IN
+            </Link>
         </div>
     </div>
 );
