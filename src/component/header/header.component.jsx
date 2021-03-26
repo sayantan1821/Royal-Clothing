@@ -41,6 +41,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import CartIcon  from '../cart icon/cart-icon.component';
+import Cart from '../cart/cart.component';
 
 import { auth } from '../../firebase/firebase.util';
 
@@ -69,7 +71,9 @@ const Header = ({ currentUser }) => (
           SIGN IN
         </Link>
       )}
+      <CartIcon />
     </div>
+    <Cart />
   </div>
 );
 
