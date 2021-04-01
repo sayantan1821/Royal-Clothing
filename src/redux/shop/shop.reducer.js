@@ -2,7 +2,7 @@ import SHOP_DATA from './shop.data';
 const INITAL_STATE = {
     collection: SHOP_DATA
 };
-const shopReducer = (state = INITIAL_STATE, action) => {
+const shopReducer = (state = INITAL_STATE, action) => {
     switch (action.type) {
         default:
             return state;
