@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-
+import StripeCheckoutButton from '../../component/stripe-button/stripe-button.component';
 import CheckoutItem from '../../component/checkout-item/checkout-item.component';
 
 import {
@@ -34,6 +34,7 @@ const Checkout = ({ cartItems, total }) => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
     <div className='total'>TOTAL: ${total}</div>
+    <StripeCheckoutButton price= {total} />
   </div>
 );
 
