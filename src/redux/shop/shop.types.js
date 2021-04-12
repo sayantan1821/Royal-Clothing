@@ -1,5 +1,6 @@
-const shopActionTypes = {
+  
+const ShopActionTypes = {
     UPDATE_COLLECTIONS: 'UPDATE_COLLECTIONS'
-}
-
-export default shopActionTypes;
+  };
+  
+  export default ShopActionTypes;
