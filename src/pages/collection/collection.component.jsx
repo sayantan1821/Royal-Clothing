@@ -11,7 +11,8 @@ import {
   CollectionItemsContainer
 } from './collection.styles';
 
-const CollectionPage = ({ con, collection }) => {
+const CollectionPage = ({ collection }) => {
+  console.log("lol",collection);
   const { title, items } = collection;
   return (
     <CollectionPageContainer>

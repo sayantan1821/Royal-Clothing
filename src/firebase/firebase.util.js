@@ -57,17 +57,20 @@ export const addCollectionAndDocuments = async (
 export const convertCollectionSnapshotToMap = collections => {
   const transformedCollection = collections.docs.map(doc => {
     const { title, items } = doc.data();
+    console.log("firebase", doc);
 
     return {
       routeName: encodeURI(title.toLowerCase()),
       id: doc.id,
-      title,
-      items
+      title: title,
+      items: items
     };
   });
 
   return transformedCollection.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
+    console.log("accumulator", accumulator);
+    alert("ok");
     return accumulator;
   }, {});
 };

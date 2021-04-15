@@ -25,12 +25,14 @@ class ShopPage extends React.Component {
   unsubscribeFromSnapshot = null;
 
   componentDidMount() {
-    const { updateCollections } = this.props;
+    // const { updateCollections } = this.props;
     const collectionRef = firestore.collection('collections');
-
+    
     collectionRef.get().then(snapshot => {
       const collectionsMap = convertCollectionSnapshotToMap(snapshot);
       updateCollections(collectionsMap);
+      console.log("ok",collectionsMap);
+      
       this.setState({ loading: false });
     });
   }
@@ -38,6 +40,7 @@ class ShopPage extends React.Component {
   render() {
     const { match } = this.props;
     const { loading } = this.state;
+    console.log(match);
     return (
       <div className='shop-page'>
         <Route
