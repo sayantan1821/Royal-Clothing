@@ -44,20 +44,22 @@ export const addCollectionAndDocuments = async (
   objectsToAdd
 ) => {
   const collectionRef = firestore.collection(collectionKey);
+  // console.log(collectionRef);
 
   const batch = firestore.batch();
   objectsToAdd.forEach(obj => {
     const newDocRef = collectionRef.doc();
+    console.log(obj);
     batch.set(newDocRef, obj);
   });
 
-  return await batch.commit();
+  // return await batch.commit();
 };
 
 export const convertCollectionSnapshotToMap = collections => {
   const transformedCollection = collections.docs.map(doc => {
     const { title, items } = doc.data();
-    console.log("firebase", doc);
+    // console.log("firebase", doc);
 
     return {
       routeName: encodeURI(title.toLowerCase()),
@@ -69,8 +71,8 @@ export const convertCollectionSnapshotToMap = collections => {
 
   return transformedCollection.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
-    console.log("accumulator", accumulator);
-    alert("ok");
+    // console.log("accumulator", accumulator);
+    // alert("ok");
     return accumulator;
   }, {});
 };

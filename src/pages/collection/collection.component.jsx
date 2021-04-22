@@ -12,7 +12,7 @@ import {
 } from './collection.styles';
 
 const CollectionPage = ({ collection }) => {
-  console.log("lol",collection);
+  // console.log("lol",collection);
   const { title, items } = collection;
   return (
     <CollectionPageContainer>
