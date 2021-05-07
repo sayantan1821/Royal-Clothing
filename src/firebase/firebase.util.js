@@ -2,6 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+
+// ksayantan1823@gmail.com
 const config = {
   apiKey: "AIzaSyB7vLTa3sLvLjg_TbimyHTs1O697bvJKCk",
   authDomain: "clothing-db-7d0b4.firebaseapp.com",
@@ -53,29 +55,29 @@ export const addCollectionAndDocuments = async (
     batch.set(newDocRef, obj);
   });
 
-  // return await batch.commit();
+  return await batch.commit();
 };
 
-export const convertCollectionSnapshotToMap = collections => {
-  const transformedCollection = collections.docs.map(doc => {
-    const { title, items } = doc.data();
-    // console.log("firebase", doc);
+// export const convertCollectionSnapshotToMap = collections => {
+//   const transformedCollection = collections.docs.map(doc => {
+//     const { title, items } = doc.data();
+//     // console.log("firebase", doc);
 
-    return {
-      routeName: encodeURI(title.toLowerCase()),
-      id: doc.id,
-      title: title,
-      items: items
-    };
-  });
+//     return {
+//       routeName: encodeURI(title.toLowerCase()),
+//       id: doc.id,
+//       title: title,
+//       items: items
+//     };
+//   });
 
-  return transformedCollection.reduce((accumulator, collection) => {
-    accumulator[collection.title.toLowerCase()] = collection;
-    // console.log("accumulator", accumulator);
-    // alert("ok");
-    return accumulator;
-  }, {});
-};
+//   return transformedCollection.reduce((accumulator, collection) => {
+//     accumulator[collection.title.toLowerCase()] = collection;
+//     // console.log("accumulator", accumulator);
+//     // alert("ok");
+//     return accumulator;
+//   }, {});
+// };
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -85,3 +87,11 @@ provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
+
+
+
+
+
+
+
+
