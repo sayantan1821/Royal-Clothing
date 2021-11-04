@@ -74,4 +74,3 @@ export default connect(
   mapDispatchToProps
 )(App);
 
-//test
